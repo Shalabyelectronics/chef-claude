@@ -1,16 +1,65 @@
-# React + Vite
+# Chef Claude
+**A recipe generation interface built with React to turn available ingredients into meals.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**[Source](https://github.com/Shalabyelectronics/chef-claude)**
 
-Currently, two official plugins are available:
+## About
+Chef Claude is a front-end application designed to help home cooks discover recipes using ingredients they already have on hand. The project is currently a work in progress focused on foundational UI state and user input handling. At this stage, it implements the ingredient submission form and list display; integration with the Claude API for AI recipe generation is planned for an upcoming milestone.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Ingredient intake form utilizing React 19 form actions and native `FormData` handling.
+- Dynamic list rendering that updates immediately as new items are added to state.
+- Accessible form controls with descriptive ARIA attributes and placeholder text.
+- Clean typography and responsive styling configured with custom CSS and the Inter typeface.
 
-## React Compiler
+## Built With
+- React 19
+- Vite
+- Oxlint
+- CSS3
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## What I Learned
+- Managing form submissions declaratively with React 19 form actions and `FormData.prototype.get()`.
+- Updating array state immutably using the `useState` hook with previous state callbacks.
+- Structuring modular React components by separating concerns between layout (`Header`) and business logic (`Main`).
+- Setting up a lean front-end development workflow using Vite and Oxlint for fast linting.
 
-## Expanding the Oxlint configuration
+## Getting Started
+Clone the repository and install dependencies to run the local development server:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+git clone https://github.com/Shalabyelectronics/chef-claude.git
+cd chef-claude
+npm install
+npm run dev
+```
+
+## Project Structure
+```text
+chef-claude/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   └── Main.jsx
+│   ├── App.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Roadmap
+- [ ] Connect Anthropic Claude API to generate recipes from the submitted ingredient list
+- [ ] Add validation requiring a minimum ingredient count before requesting recipes
+- [ ] Provide ingredient deletion and list-clearing controls
+- [ ] Add loading indicators and error states during API generation calls
+- [ ] Render formatted Markdown responses for recipe instructions
+
+## Author
+Mohamed Shalaby
+- Website: [shalabycode.dev](https://shalabycode.dev)
+- GitHub: [@Shalabyelectronics](https://github.com/Shalabyelectronics)
+- LinkedIn: [Mohamed Shalaby](https://www.linkedin.com/in/mhdshalaby/)
